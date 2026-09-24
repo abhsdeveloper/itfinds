@@ -1670,9 +1670,9 @@ const searchSuggestions = showSuggestions
               onClick={goHome}
               type="button"
             >
-              <span className="logo-symbol">
-                S
-              </span>
+             <span className="logo-symbol">
+  <img src="/favicon.svg" alt="" />
+</span>
 
               <span className="logo-name">
                 <span>Itfinds</span>
