@@ -936,18 +936,20 @@ const searchSuggestions = showSuggestions
       <header className="navbar">
         <div className="nav-container">
           <button
-            className="logo logo-button"
-            onClick={goHome}
-            type="button"
-            aria-label="Go to Itfinds home"
-          >
-            <span className="logo-symbol">S</span>
+  className="logo logo-button"
+  onClick={goHome}
+  type="button"
+  aria-label="Go to Itfinds home"
+>
+  <span className="logo-symbol">
+    <img src="/favicon.svg" alt="" />
+  </span>
 
-            <span className="logo-name">
-              <span>Itfinds</span>
-              <small>by Abhs</small>
-            </span>
-          </button>
+  <span className="logo-name">
+    <span>Itfinds</span>
+    <small>by Abhs</small>
+  </span>
+</button>
 
           <nav className="nav-links">
             <a href="#categories">Categories</a>
