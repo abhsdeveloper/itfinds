@@ -48,7 +48,7 @@ const categories = [
 /*
   TEMPORARY TOOL DATABASE
 
-  This is only for testing the Shaabhi search experience.
+  This is only for testing the Itfinds search experience.
   Later we will replace this with Cloudflare D1.
 */
 
@@ -847,7 +847,7 @@ const searchSuggestions = showSuggestions
   const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {
-    document.title = "Shaabhi — Discover the Right Tool | by Abhs";
+    document.title = "Itfinds — Discover the Right Tool | by Abhs";
 
     let description = document.querySelector(
       'meta[name="description"]'
@@ -861,7 +861,7 @@ const searchSuggestions = showSuggestions
 
     description.setAttribute(
       "content",
-      "Shaabhi by Abhs helps you discover useful online tools for everyday tasks, work, study, creativity and more."
+      "Itfinds by Abhs helps you discover useful online tools for everyday tasks, work, study, creativity and more."
     );
   }, []);
 
@@ -939,12 +939,12 @@ const searchSuggestions = showSuggestions
             className="logo logo-button"
             onClick={goHome}
             type="button"
-            aria-label="Go to Shaabhi home"
+            aria-label="Go to Itfinds home"
           >
             <span className="logo-symbol">S</span>
 
             <span className="logo-name">
-              <span>Shaabhi</span>
+              <span>Itfinds</span>
               <small>by Abhs</small>
             </span>
           </button>
@@ -979,7 +979,7 @@ const searchSuggestions = showSuggestions
                 </div>
 
                 <div className="hero-brand">
-                  <span>Shaabhi</span>
+                  <span>Itfinds</span>
                   <small>by Abhs</small>
                 </div>
 
@@ -990,7 +990,7 @@ const searchSuggestions = showSuggestions
                 </h1>
 
                 <p className="hero-description">
-                  Tell Shaabhi what you want to do.
+                  Tell Itfinds what you want to do.
                   <br className="desktop-break" />
                   We'll help you find the right online tool.
                 </p>
@@ -1315,7 +1315,7 @@ const searchSuggestions = showSuggestions
             >
               <div className="how-heading">
                 <span className="section-kicker">
-                  HOW SHAABHI WORKS
+                  HOW ITFINDS WORKS
                 </span>
 
                 <h2>
@@ -1351,7 +1351,7 @@ const searchSuggestions = showSuggestions
                     <h3>Discover the right tool</h3>
 
                     <p>
-                      Shaabhi finds tools that
+                      Itfinds finds tools that
                       match the task you're trying
                       to accomplish.
                     </p>
@@ -1396,7 +1396,7 @@ const searchSuggestions = showSuggestions
                 </h2>
 
                 <p>
-                  Submit your tool to Shaabhi and
+                  Submit your tool to Itfinds and
                   help people discover it when
                   they're looking for exactly what
                   it does.
@@ -1430,7 +1430,7 @@ const searchSuggestions = showSuggestions
                   onClick={goHome}
                 >
                   ←
-                  <span>Back to Shaabhi</span>
+                  <span>Back to Itfinds</span>
                 </button>
 
                 <div className="results-title">
@@ -1673,7 +1673,7 @@ const searchSuggestions = showSuggestions
               </span>
 
               <span className="logo-name">
-                <span>Shaabhi</span>
+                <span>Itfinds</span>
                 <small>by Abhs</small>
               </span>
             </button>
@@ -1718,7 +1718,7 @@ const searchSuggestions = showSuggestions
 
         <div className="footer-bottom">
           <span>
-            © {new Date().getFullYear()} Shaabhi
+            © {new Date().getFullYear()} Itfinds
             <b className="footer-company">
               {" "}
               · A product by Abhs
