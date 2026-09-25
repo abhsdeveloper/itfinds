@@ -1896,6 +1896,9 @@ function openEmailEnquiry() {
 
               <a href="#how-it-works">
                 How it works
+
+                <a href="#contact">
+                  Contact & Enquiries</a>
               </a>
             </div>
 
