@@ -963,10 +963,15 @@ function openEmailEnquiry() {
     getEnquiryMessage()
   );
 
-  window.location.href =
-    `mailto:abhsdeveloper@gmail.com?subject=${subject}&body=${body}`;
-}
+  const gmailUrl =
+    `https://mail.google.com/mail/?view=cm&fs=1&to=abhsdeveloper@gmail.com&su=${subject}&body=${body}`;
 
+  window.open(
+    gmailUrl,
+    "_blank",
+    "noopener,noreferrer"
+  );
+}
   return (
     <div className="app">
       <div className="ambient ambient-one"></div>
