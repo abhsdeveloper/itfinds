@@ -839,6 +839,7 @@ function App() {
   const [activeCategory, setActiveCategory] = useState(null);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [selectedSuggestion, setSelectedSuggestion] = useState(-1);
+  const [enquiryType, setEnquiryType] = useState("General Enquiry");
 
 const searchSuggestions = showSuggestions
   ? getSearchSuggestions(search)
@@ -924,6 +925,47 @@ const searchSuggestions = showSuggestions
       behavior: "smooth",
     });
   };
+  const enquiryTypes = [
+  "General Enquiry",
+  "Suggest a Tool",
+  "Report a Problem",
+  "Business / Partnership",
+  "Other",
+];
+
+function getEnquiryMessage() {
+  return `Hi Itfinds by Abhs,
+
+I would like to make an enquiry.
+
+Enquiry Type: ${enquiryType}
+
+Message:
+`;
+}
+
+function openWhatsAppEnquiry() {
+  const message = encodeURIComponent(getEnquiryMessage());
+
+  window.open(
+    `https://wa.me/917995422457?text=${message}`,
+    "_blank",
+    "noopener,noreferrer"
+  );
+}
+
+function openEmailEnquiry() {
+  const subject = encodeURIComponent(
+    `Itfinds — ${enquiryType}`
+  );
+
+  const body = encodeURIComponent(
+    getEnquiryMessage()
+  );
+
+  window.location.href =
+    `mailto:abhsdeveloper@gmail.com?subject=${subject}&body=${body}`;
+}
 
   return (
     <div className="app">
@@ -957,6 +999,8 @@ const searchSuggestions = showSuggestions
             <a href="#popular">Popular</a>
 
             <a href="#how-it-works">How it works</a>
+
+            <a href="#contact">Contact</a>
           </nav>
 
           <a href="#submit" className="submit-nav">
@@ -1377,6 +1421,157 @@ const searchSuggestions = showSuggestions
                 </div>
               </div>
             </section>
+            <section className="contact-section" id="contact">
+  <div className="contact-container">
+
+    <div className="contact-heading">
+      <span className="section-eyebrow">
+        CONTACT & ENQUIRIES
+      </span>
+
+      <h2>
+        Have something
+        <span> to ask?</span>
+      </h2>
+
+      <p>
+        Whether you have a question, found a problem,
+        want to suggest a tool, or would like to work
+        with Itfinds — we'd love to hear from you.
+      </p>
+    </div>
+
+    <div className="contact-content">
+
+      <div className="contact-info">
+
+        <div className="contact-info-card">
+          <div className="contact-info-icon">💬</div>
+
+          <div>
+            <h3>Talk to us</h3>
+
+            <p>
+              Have a quick question or want to
+              reach us directly?
+            </p>
+
+            <button
+              type="button"
+              className="contact-direct-button"
+              onClick={openWhatsAppEnquiry}
+            >
+              WhatsApp us ↗
+            </button>
+          </div>
+        </div>
+
+
+        <div className="contact-info-card">
+          <div className="contact-info-icon">📩</div>
+
+          <div>
+            <h3>Send an enquiry</h3>
+
+            <p>
+              For suggestions, problems, partnerships
+              or other enquiries.
+            </p>
+
+            <span className="contact-email">
+              abhsdeveloper@gmail.com
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div className="enquiry-card">
+
+        <div className="enquiry-card-header">
+          <span>✦</span>
+
+          <div>
+            <h3>What can we help with?</h3>
+
+            <p>
+              Choose an enquiry type and select
+              how you'd like to contact us.
+            </p>
+          </div>
+        </div>
+
+
+        <div className="enquiry-options">
+
+          {enquiryTypes.map((type) => (
+            <button
+              key={type}
+              type="button"
+              className={
+                enquiryType === type
+                  ? "enquiry-option active"
+                  : "enquiry-option"
+              }
+              onClick={() => setEnquiryType(type)}
+            >
+              <span>
+                {enquiryType === type ? "✓" : ""}
+              </span>
+
+              {type}
+            </button>
+          ))}
+
+        </div>
+
+
+        <div className="enquiry-actions">
+
+          <button
+            type="button"
+            className="enquiry-email-button"
+            onClick={openEmailEnquiry}
+          >
+            <span>✉</span>
+
+            <div>
+              <strong>Email Enquiry</strong>
+              <small>Open your email app</small>
+            </div>
+
+            <span className="enquiry-action-arrow">
+              ↗
+            </span>
+          </button>
+
+
+          <button
+            type="button"
+            className="enquiry-whatsapp-button"
+            onClick={openWhatsAppEnquiry}
+          >
+            <span>💬</span>
+
+            <div>
+              <strong>WhatsApp Enquiry</strong>
+              <small>Start a conversation</small>
+            </div>
+
+            <span className="enquiry-action-arrow">
+              ↗
+            </span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
             {/* SUBMIT */}
 
